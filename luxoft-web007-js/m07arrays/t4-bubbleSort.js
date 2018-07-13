@@ -11,17 +11,22 @@
         var swapcnt;
         for (i = 0; i < arr.length; i++) {
             swapcnt = 0;
-            for (j = 0; j < arr.length; j++) {
-                if (arr[j - 1] > arr[j]) {
-                    swap(arr, j - 1, j);
-                    swapcnt++;
-                }
-            }
+            swapcnt = bubbleOnce(arr, swapcnt);
             if (swapcnt === 0) {
                 console.log("Sorted in " + i + " iterations");
                 break;
             }
         }
+    }
+
+    function bubbleOnce(arr, swapcnt) {
+        for (j = 0; j < arr.length; j++) {
+            if (arr[j - 1] > arr[j]) {
+                swap(arr, j - 1, j);
+                swapcnt++;
+            }
+        }
+        return swapcnt;
     }
 
     // Utils
