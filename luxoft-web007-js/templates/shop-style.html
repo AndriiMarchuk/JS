@@ -1,0 +1,109 @@
+<html>
+<body>
+
+
+<br>
+<br>
+
+<!--<form action="/customers" method="get" >-->
+
+
+    <!--<input type="text" name="name" value="Oleg" />-->
+    <!--<input type="hidden" name="secret" value="hi" />-->
+    <!--<input type="submit" value="submit" />-->
+
+<!--</form>-->
+
+<link rel="stylesheet" href="../css/bootstrap.css">
+
+<!--<button class="btn btn-success" id="add" onclick="addBird()" >Add Bird</button>-->
+
+<!--<table class="table" id="summary">-->
+
+    <!--<tr>-->
+        <!--<th>#</th>-->
+        <!--<th>Type</th>-->
+    <!--</tr>-->
+    <!--<tr>-->
+        <!--<td>25</td>-->
+        <!--<td>Duck</td>-->
+    <!--</tr>-->
+    <!--<tr>-->
+        <!--<td>45</td>-->
+        <!--<td>Eagle</td>-->
+    <!--</tr>-->
+<!--</table>-->
+
+
+<script>
+
+    var shop = new Shop();
+
+    shop.addBird("E", 20, 10);
+    shop.buy("E", 5);
+
+
+    function Bird(type)
+    {
+        this.type = type;
+        this.price;
+        this.count = 0;
+    }
+
+    function Shop()
+    {
+        this.birds = [];
+
+        this.buy = function(type, count)
+        {
+            var b = this.getBird(type);
+
+            if (b == null)
+            {
+                console.log("No such bird");
+                return;
+            }
+
+            count = b.count > count ? count : b.count;
+            b.count -= count;
+        };
+
+        this.addBird = function(type, count, price)
+        {
+            var b = this.getBirdAndCreateIfNotExist(type);
+
+            b.count += count;
+            b.price = price;
+        };
+
+        this.getBirdAndCreateIfNotExist = function(type)
+        {
+            var b = this.getBird(type);
+
+            if (b == null)
+            {
+                b = new Bird(type);
+                this.birds.push(b);
+            }
+
+            return b;
+        }
+
+        this.getBird = function(type)
+        {
+            for (i in this.birds)
+            {
+                if (this.birds[i].type == type)
+                {
+                    return this.birds[i];
+                }
+            }
+            return null;
+        }
+    }
+
+
+</script>
+
+</body>
+</html>
