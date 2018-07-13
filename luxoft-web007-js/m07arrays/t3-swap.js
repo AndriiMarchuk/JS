@@ -14,7 +14,9 @@
     // should swap elements with given positions
     function swap(arr, pos1, pos2)
     {
-        // TODO your code here
+        tmp = arr[pos1];
+        arr[pos1] = arr[pos2];
+        arr[pos2] = tmp;
     }
 
 
@@ -23,7 +25,13 @@
     // return count of elements el within array
     function getCountOfElements(arr, el)
     {
-        // TODO your code here
+        cnt = 0;
+        for (i = 0; i < arr.length; i++) {
+            if (arr[i] == el){
+                cnt++;
+            }
+        }
+        return cnt;
     }
 
     // returns:
@@ -32,14 +40,20 @@
     //    -1 if not
     function findElement(arr, el)
     {
-        // TODO your code here
+        for (i = 0; i < arr.length; i++) {
+            if (arr[i] == el){
+                return el;
+            }
+        }
+        return -1;
     }
-
     function fillArrayWithRndNumbers(arr, count)
     {
-        // TODO your code here
-
+        for (i = 0; i < count; i++) {
+            numbers[i] = getRndNumber();
+        }
     }
+
 
     function printArray(arr)
     {

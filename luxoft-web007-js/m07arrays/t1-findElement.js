@@ -6,8 +6,8 @@
 
     printArray(numbers);
 
-    // TODO test it here
-    console.log(findElement(numbers, 99));
+    // test(numbers.count);
+    console.log(findElement(numbers, 3));
 
     // returns:
     //
@@ -15,13 +15,19 @@
     //    -1 if not
     function findElement(arr, el)
     {
-        // TODO your code here
+        for (i in arr) {
+            if (arr[i] === el){
+                return el;
+            }
+        }
+        return -1;
     }
 
     function fillArrayWithRndNumbers(arr, count)
     {
-        // TODO your code here
-
+        for (i = 0; i < count; i++) {
+            numbers[i] = getRndNumber();
+        }
     }
 
     // Utils
