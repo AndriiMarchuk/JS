@@ -10,6 +10,7 @@
     }
 
     console.log(avg(1, 2, 3, 4, 5));
+
     console.log(avg.apply(this, [1, 2, 3]));
 
 })();
