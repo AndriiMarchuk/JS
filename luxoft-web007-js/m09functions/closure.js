@@ -41,7 +41,7 @@
     var add25 = addWithFn(25);
     var add46 = addWithFn(46);
 
-    console.log("add25: " + add25(5));
+    console.log("add25: " + addWithFn(25) (5));
     console.log("add46: " + add46(4));
 
 })();
