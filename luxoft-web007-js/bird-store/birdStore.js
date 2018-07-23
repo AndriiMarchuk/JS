@@ -11,12 +11,14 @@
     var store = loadStore(initialStore);
 
     getCurrentStoreState();
-    addNewBird({"type":"Chicken", "count":12, "price":7, "sold":0});
+    var newBird = {type:"Chicken", count:12, price:7};
+    addNewBird(newBird);
     addExistingBird("Duck", 5);
     getBirdsLessThan(20);
     sellBird("Eagle", 10);
     sellBird("Eagle", 3);
     getSoldBird("Eagle");
+    changeBirdPrice("Chicken", 8);
     sellBird("Chicken", 5);
     getCurrentStoreState();
 
@@ -37,8 +39,23 @@
     }
 
     function addNewBird(newBird){
-        store.birds.push(newBird);
-        console.log("Added new Bird:" + JSON.stringify(newBird) + " to a store\n");
+        var newVerifiedBird = new Object();
+        if(newBird.type === undefined || newBird.price === undefined){
+            console.log("Error. Can\'t have undefined type or price for a bird.\n");
+            return;
+        }
+        newVerifiedBird.type = newBird.type;
+        newVerifiedBird.price = newBird.price;
+        if(newBird.count === undefined){
+            newBird.count = 0;
+        }
+        newVerifiedBird.count = newBird.count;
+        if(newBird.sold === undefined){
+            newBird.sold = 0;
+        }
+        newVerifiedBird.sold = newBird.sold;
+        store.birds.push(newVerifiedBird);
+        console.log("Added new Bird:" + JSON.stringify(newVerifiedBird) + " to a store\n");
     }
 
     function addExistingBird(birdName, birdCount){
@@ -47,6 +64,16 @@
             if (birdName === bird.type) {
                 bird.count += birdCount;
                 console.log("Added " + birdCount + " " + birdName + ". Current count: " + bird.count + "\n");
+            }
+        }
+    }
+
+    function changeBirdPrice(birdName, birdNewPrice){
+        for (var i in store.birds) {
+            var bird = store.birds[i];
+            if (birdName === bird.type) {
+                bird.price = birdNewPrice;
+                console.log("Changed " + bird.type + " price to " + birdNewPrice + "\n");
             }
         }
     }
