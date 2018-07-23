@@ -1,0 +1,18 @@
+{
+  "owner": "Mike",
+  "address": "Radishcheva 10/14",
+  "birds": [
+    {
+      "type": "Duck",
+      "count": 10,
+      "price": 15,
+      "sold": 1
+    },
+    {
+      "type": "Eagle",
+      "count": 5,
+      "price": 50,
+      "sold": 2
+    }
+  ]
+}
