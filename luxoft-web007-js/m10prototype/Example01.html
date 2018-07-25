@@ -1,0 +1,24 @@
+<body>
+<script src="Complex.js">
+</script>
+<script>
+var c1 = new Complex(9, 0);
+var c2 = new Complex(18, 0);
+document.write("c1: " + c1);
+document.write("<br>");
+document.write("c2: " + c2);
+document.write("<br>");
+document.write("Magnitude c1: " + c1.magnitude());
+document.write("<br>");
+document.write("Negative: " + c1.negative());
+document.write("<br>");
+document.write("Add c2 to c1: " + c1.add(c2));
+document.write("<br>");
+document.write("Multiply c2 on c1: " + c1.multiply(c2));
+document.write("<br>");
+document.write("Equals c1 with new Complex(9, 0): " + c1.equals(new Complex(9, 0)));
+document.write("<br>");
+document.write("Complex one: " + Complex.ONE);
+
+</script>
+</body>

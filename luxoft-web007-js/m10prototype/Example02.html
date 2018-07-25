@@ -1,0 +1,14 @@
+<body>
+<script src="Rect.js">
+</script>
+<script>
+var r1 = new Rectangle(3, 5);
+document.write("r1(3, 5) area: " + r1.area());
+
+document.write("<br>");
+var p1 = new PositionedRectangle(0, 0, 5, 5);
+document.write("p1(0, 0, 5, 5) contains (4,4): " + p1.contains(4, 4) + ", area(inherited): " + p1.area());
+
+
+</script>
+</body>

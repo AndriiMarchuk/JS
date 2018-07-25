@@ -74,4 +74,3 @@ console.log(addr.getCity());
 
 addr.setCity('Moscow');
 console.log(addr.getCity());
-
