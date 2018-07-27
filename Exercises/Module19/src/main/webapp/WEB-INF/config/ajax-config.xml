@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:p="http://www.springframework.org/schema/p"
+	   xmlns:dwr="http://www.directwebremoting.org/schema/spring-dwr"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+                            http://www.directwebremoting.org/schema/spring-dwr
+                            http://www.directwebremoting.org/schema/spring-dwr-2.0.xsd
+                            http://www.springframework.org/schema/context
+                            http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<context:component-scan base-package="com.apress.prospring2.ch19.web"/>
+
+	<!-- Mappings -->
+	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>		
+
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
+
+
+	<!-- Views -->
+	<bean id="viewNameTranslator" class="org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator" />
+
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+		  p:prefix="/WEB-INF/views/"
+		  p:suffix=".jsp" />
+
+	<bean id="someBean" class="com.luxoft.cars.CarDatabase">
+		<dwr:remote javascript="DwrService">
+			<dwr:include method="getAutomakers"/>
+			<dwr:include method="getAutomaker"/>
+			<dwr:include method="getModel"/>
+		</dwr:remote>
+	</bean>
+
+
+	<dwr:configuration>	
+		<dwr:convert type="bean" class="com.luxoft.cars.Automaker"/>
+		<dwr:convert type="bean" class="com.luxoft.cars.CarModel"/>
+		<dwr:convert type="enum" class="com.luxoft.cars.GearBox"/>
+	</dwr:configuration>
+	
+	<dwr:controller name="dwr" debug="true"/>
+	
+</beans>

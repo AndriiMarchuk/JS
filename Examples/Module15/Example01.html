@@ -1,0 +1,33 @@
+<html>
+<head>
+<script src="Cookie.js">
+</script>
+<script type="text/javascript">
+
+function checkCookie()
+{
+username=getCookie('username');
+if (username!=null && username!="")
+  {
+  alert('Welcome again '+username+'!');
+  }
+else 
+  alert('Cookie username was not set');  
+}
+function setUserCookie()
+{
+  username=prompt('Please enter your name:',"");
+  if (username!=null && username!="") {
+    setCookie('username',username,365);
+  }
+}
+
+</script>
+</head>
+<body>
+<input type="button" onclick="checkCookie()" value="Check cookie"/>
+<input type="button" onclick="setUserCookie()" value="Set cookie"/>
+<input type="button" onclick="deleteCookie('username');" value="Delete cookie"/>
+</body>
+</html>
+

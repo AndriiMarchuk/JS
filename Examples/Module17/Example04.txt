@@ -1,0 +1,17 @@
+<!-- XML encoding -->
+<author>
+  <name>Wendell Berry</name>
+  <books>
+    <book>The Unsettling of America</book>
+    <book>What are People For?</book>
+  </books>
+</author>
+
+// JSON Encoding
+{
+  "name": "Wendell Berry",
+  "books": [
+    "The Unsettling of America",
+    "What are People For?"
+  ]
+}

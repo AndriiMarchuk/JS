@@ -1,0 +1,21 @@
+<body onload="register()">
+<script>
+
+var handler = function(event) {
+event = event || window.event 
+ 
+    if (event.preventDefault) {
+        // Вариант стандарта W3C: 
+        event.preventDefault()
+    } else {
+        // Вариант Internet Explorer:
+        event.returnValue = false
+    }    
+} 
+function register() {
+var myElement2 = document.getElementById("myElement2");
+myElement2.onclick=handler;
+}
+</script>
+<a href="http://www.google.com" id="myElement2" >Press me<a/>
+</body>

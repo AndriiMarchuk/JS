@@ -1,0 +1,27 @@
+<html>
+<head>
+<script type="text/javascript">
+function cursor(image)
+{
+trail.innerHTML="<img src='" + image + "' />";
+trail.style.visibility="visible";
+}
+
+function hidecursor()
+{
+trail.style.visibility="hidden";
+}
+</script>
+
+</head>
+<body>
+
+<h1>Mouse over these links</h1>
+<a href="http://www.google.com" onmousemove="cursor('Example05_files/google.png')" onmouseout="hidecursor()">Google</a><br />
+<a href="http://www.yahoo.com" onmousemove="cursor('Example05_files/yahoo.gif')" onmouseout="hidecursor()">Yahoo!</a><br />
+
+<span id="trail" style="visibility:hidden">Hello</span>
+
+</body>
+</html>
+

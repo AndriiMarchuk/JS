@@ -1,0 +1,857 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
+<title>a d @ c t i o</title>
+
+<!--	I'm flattered that you're checking out the source code :)		
+		Everything is copyright yours truly, Jeremy Keith	-->
+
+<style type="text/css">
+#loading		{z-index: 1100; position: absolute; left: 0px; top: 0px; width: 660px; height: 440px}
+#foreground1	{z-index: 1000; position: absolute; left: 0px; top: 0px; width: 660px; height: 50px}
+#foreground2	{z-index: 1000; position: absolute; left: 0px; top: 50px; width: 50px; height: 300px}
+#foreground3	{z-index: 1000; position: absolute; left: 450px; top: 50px; width: 50px; height: 300px}
+#foreground4	{z-index: 1000; position: absolute; left: 500px; top: 50px; width: 100px; height: 175px}
+#foreground5	{z-index: 1000; position: absolute; left: 600px; top: 50px; width: 60px; height: 300px}
+#foreground6	{z-index: 1000; position: absolute; left: 500px; top: 325px; width: 100px; height: 25px}
+#foreground7	{z-index: 1000; position: absolute; left: 0px; top: 350px; width: 660px; height: 20px}
+#foreground8	{z-index: 1000; position: absolute; left: 0px; top: 370px; width: 45px; height: 50px}
+#foreground9	{z-index: 1000; position: absolute; left: 595px; top: 370px; width: 45px; height: 50px}
+#foreground10	{z-index: 1000; position: absolute; left: 0px; top: 420px; width: 660px; height: 20px}
+#foreground11	{z-index: 1000; position: absolute; left: 50px; top: 50px; width: 50px; height: 50px}
+#foreground12	{z-index: 1000; position: absolute; left: 400px; top: 50px; width: 50px; height: 50px}
+#foreground13	{z-index: 1000; position: absolute; left: 50px; top: 300px; width: 50px; height: 50px}
+#foreground14	{z-index: 1000; position: absolute; left: 400px; top: 300px; width: 50px; height: 50px}
+#foreground15	{z-index: 400; position: absolute; left: 45px; top: 370px; width: 550px; height: 50px}
+#foreground16	{z-index: 1; position: absolute; left: 500px; top: 175px; width: 100px; height: 150px}
+#foreground17	{z-index: 1000; position: absolute; left: 500px; top: 175px; width: 25px; height: 25px}
+#foreground18	{z-index: 1000; position: absolute; left: 575px; top: 175px; width: 25px; height: 25px}
+#foreground19	{z-index: 1000; position: absolute; left: 500px; top: 300px; width: 25px; height: 25px}
+#foreground20	{z-index: 1000; position: absolute; left: 575px; top: 300px; width: 25px; height: 25px}
+#logo		{z-index: 1001; position: absolute; left: 200px; top: 0px; width: 100px; height: 25px}
+#shape		{z-index: 1002; position: absolute; left: 645px; top: -115px; width: 100px; height: 135px}
+#web		{z-index: 1003; position: absolute; left: 495px; top: -115px; width: 26px; height: 65px}
+#design		{z-index: 1004; position: absolute; left: 645px; top: 105px; width: 90px; height: 30px}
+#questions	{z-index: 500; position: absolute; left: 70px; top: 382px; width: 100px; height: 25px}
+#method		{z-index: 500; position: absolute; left: 170px; top: 382px; width: 100px; height: 25px}
+#portfolio	{z-index: 500; position: absolute; left: 270px; top: 382px; width: 100px; height: 25px}
+#contact	{z-index: 500; position: absolute; left: 370px; top: 382px; width: 100px; height: 25px}
+#pricing	{z-index: 500; position: absolute; left: 470px; top: 382px; width: 100px; height: 25px}
+#quesblurb,#methblurb,#portblurb,#contblurb,#priceblurb,#headblur1,#headblur2,#head	{z-index: 100; position: absolute; left: 500px; top: 200px; width: 100px; height: 100px; visibility: hidden}
+#blank		{z-index: 100; position: absolute; left: 500px; top: 200px; width: 100px; height: 100px }
+#bluracross1,#bluracross2,#bluracross3,#bluracross4	{z-index: 100; position: absolute; left: 500px; top: 200px; width: 100px; height: 100px; visibility: hidden}
+#intro,#questionstext,#why,#good,#bad,#methodtext,#consultation,#creation,#changes,#portfoliotext,#designportfolio,#devportfolio,#contacttext,#pricingtext,#pricinghourly,#pricingfixed	{z-index: 200; position: absolute; left: 80px; top: 75px; width: 325px; visibility: hidden}
+#guidedtour,#lit,#beam,#session,#salonorchester,#lunarride,#fernweh,#wordridden,#iz3w,#ibt,#vitra,#vi,#siemens		{z-index: 100; position: absolute; left: 500px; top: 200px; width: 100px; height: 94px; visibility: hidden}
+#upfast		{z-index: 1001; position: absolute; left: 425px; top: 150px; width: 25px; height: 25px; visibility: hidden}
+#up		{z-index: 1001; position: absolute; left: 425px; top: 175px; width: 25px; height: 25px; visibility: hidden}
+#down		{z-index: 1001; position: absolute; left: 425px; top: 200px; width: 25px; height: 25px; visibility: hidden}
+#downfast	{z-index: 1001; position: absolute; left: 425px; top: 225px; width: 25px; height: 25px; visibility: hidden}
+#upscroll	{z-index: 1001; position: absolute; left: 444px; top: 50px; width: 25px; height: 25px; visibility: hidden}
+#downscroll	{z-index: 1001; position: absolute; left: 444px; top: 325px; width: 25px; height: 25px; visibility: hidden}
+#decrease	{z-index: 1002; position: absolute; left: 5px; top: 5px; width: 8px; height: 15px; visibility: hidden}
+#increase	{z-index: 1002; position: absolute; left: 32px; top: 5px; width: 8px; height: 15px; visibility: hidden}
+#button		{z-index: 1001; position: absolute; left: 15px; top: 5px; width: 15px; height: 15px}
+#brightnessblurb	{z-index: 100; position: absolute; left: 525px; top: 200px; width: 50px; height: 100px; visibility: hidden}
+</style>
+<script language="JavaScript" type="text/javascript">
+<!--
+window.focus();
+var currBlurb="blank",currText="intro",currTop=75,topStopPoint=75;
+var currPreview="beam",PreviewLeft=600,PreviewLeftStop=500;
+var logoStatus=0,colorStatus=33,brightnessStatus=0,scrollStatus=0;
+
+var places = new Array('questions','method','portfolio','contact','pricing');
+
+for (i=0;i<=places.length;i++) {
+	eval (places[i]+'on = new Image(100,25)');
+	eval (places[i]+'on.src = "graphics/'+places[i]+'on.gif"');
+	eval (places[i]+'off = new Image(100,25)');
+	eval (places[i]+'off.src = "graphics/'+places[i]+'.gif"');
+}
+	
+function swap(firstpic,secondpic){
+	firstpic.src = secondpic.src;
+}
+	
+if (document.layers) {
+	firstBit='document.layers["';
+	secondBit='"]';
+	thirdBit='';
+	styleRef='';
+	leftVar='.left';
+	topVar='.top';
+	heightVar='.clip.height';
+	widthVar='.clip.width';
+} else if (document.all) {
+	firstBit='document.all["';
+	secondBit='"]';
+	thirdBit='px';
+	styleRef='.style';
+	leftVar='.posLeft';
+	topVar='.posTop';
+	heightVar='.offsetHeight';
+	widthVar='.offsetWidth';
+} else if (document.getElementById) {
+	firstBit='document.getElementById("';
+	secondBit='")';
+	thirdBit='px';
+	styleRef='.style';
+	leftVar='.left';
+	topVar='.top';
+	heightVar='.offsetHeight';
+	widthVar='.offsetWidth';
+}
+	
+function showLayer(layerName){
+	eval(firstBit+layerName+secondBit+styleRef+'.visibility="visible"');
+}
+	
+function hideLayer(layerName){
+	eval(firstBit+layerName+secondBit+styleRef+'.visibility="hidden"');
+}
+	
+function getXpos(layerName) {
+	return eval(parseInt[firstBit+layerName+secondBit+styleRef+leftVar]);
+}
+	
+function getYpos(layerName) {
+	return eval(parseInt[firstBit+layerName+secondBit+styleRef+topVar]);
+}
+	
+function getHeight(layerName) {
+	return eval(firstBit+layerName+secondBit+heightVar);
+}
+	
+function getWidth(layerName) {
+	return eval(firstBit+layerName+secondBit+widthVar);
+}
+	
+function init(){
+	window.focus();
+	hideLayer('loading');
+	callText('intro');
+	setTimeout('anim()',3000);
+}
+	
+function anim(){
+	slideWest('design',645,150,1);
+	slideSouth('web',-115,150,1);
+	slideSouth('shape',-115,150,1);
+	slideWest('shape',645,150,1);
+	slideEast('logo',200,300,4);
+}
+	
+function callText(textName){
+	eval(firstBit+textName+secondBit+styleRef+'.top = 75+thirdBit');
+	eval(firstBit+textName+secondBit+styleRef+'.left = 80+thirdBit');
+	currTop=75;
+	bottomStopPoint=350-getHeight(textName);
+	hideLayer(currText);
+	showLayer(textName);
+	currText=textName;
+	if (getHeight(textName)>275) {
+		showLayer('upscroll');
+		showLayer('up');
+		showLayer('upfast');
+		showLayer('downscroll');
+		showLayer('down');
+		showLayer('downfast');
+	} else {
+		hideLayer('upscroll');
+		hideLayer('up');
+		hideLayer('upfast');
+		hideLayer('downscroll');
+		hideLayer('down');
+		hideLayer('downfast');
+	}
+}
+	
+function changeBlurb(Blurb){
+	hideLayer(currBlurb);
+	showLayer(Blurb);
+	currBlurb=Blurb;
+}
+function changePreview(Preview){
+	hideLayer(currPreview);
+	showLayer(Preview);
+	currPreview=Preview;
+}
+	
+function fourBlurbon(whatBlurb){
+	setTimeout('changeBlurb("bluracross1")',50);
+	setTimeout('changeBlurb("bluracross2")',100);
+	setTimeout('changeBlurb("'+whatBlurb+'")',150);
+}
+function fourBlurboff(){
+	setTimeout('changeBlurb("bluracross2")',50);
+	setTimeout('changeBlurb("bluracross1")',100);
+	setTimeout('changeBlurb("blank")',150);
+}
+function threeBlurbon(whatBlurb){
+	setTimeout('changeBlurb("bluracross3")',50);
+	setTimeout('changeBlurb("bluracross4")',100);
+	setTimeout('changeBlurb("'+whatBlurb+'")',150);
+}
+function threeBlurboff(){
+	setTimeout('changeBlurb("bluracross4")',50);
+	setTimeout('changeBlurb("bluracross3")',100);
+	setTimeout('changeBlurb("blank")',150);
+}
+function blurHeadon(){
+	setTimeout('changeBlurb("headblur1")',50);
+	setTimeout('changeBlurb("headblur2")',100);
+	setTimeout('changeBlurb("head")',150);
+}
+function blurHeadoff(){
+	setTimeout('changeBlurb("headblur2")',50);
+	setTimeout('changeBlurb("headblur1")',100);
+	setTimeout('changeBlurb("blank")',150);
+}
+
+function slideWest(layerName,startPoint,distance,increment){
+	west=startPoint;
+	wdist=distance;
+	winc=increment
+	wdist=wdist-winc;
+	if (wdist>0){
+	west=west-winc;
+	eval(firstBit+layerName+secondBit+styleRef+'.left = west+thirdBit');
+	setTimeout('slideWest("'+layerName+'",west,wdist,winc)',10);
+	}
+}
+function slideEast(layerName,startPoint,distance,increment){
+	east=startPoint;
+	edist=distance;
+	einc=increment
+	edist=edist-einc;
+	if (edist>0){
+	east=east+einc;
+	eval(firstBit+layerName+secondBit+styleRef+'.left = east+thirdBit');
+	setTimeout('slideEast("'+layerName+'",east,edist,einc)',10);
+	}
+}
+function slideNorth(layerName,startPoint,distance,increment){
+	north=startPoint;
+	ndist=distance;
+	ninc=increment
+	ndist=ndist-ninc;
+	if (ndist>0){
+	north=north-ninc;
+	eval(firstBit+layerName+secondBit+styleRef+'.top = north+thirdBit');
+	setTimeout('slideNorth("'+layerName+'",north,ndist,ninc)',10);
+	}
+}
+function slideSouth(layerName,startPoint,distance,increment){
+	south=startPoint;
+	sdist=distance;
+	sinc=increment
+	sdist=sdist-sinc;
+	if (sdist>0){
+	south=south+sinc;
+	eval(firstBit+layerName+secondBit+styleRef+'.top = south+thirdBit');
+	setTimeout('slideSouth("'+layerName+'",south,sdist,sinc)',10);
+	}
+}
+
+function scrollTextDown(speed){
+	if(currTop>bottomStopPoint) {
+		b=speed;
+		currTop=currTop-b;
+		eval(firstBit+currText+secondBit+styleRef+'.top=currTop+thirdBit');
+		scrollStatus=setTimeout('scrollTextDown(b)',10);
+	}
+}
+function scrollTextUp(speed){
+	if (currTop<topStopPoint){
+		t=speed;
+		currTop=currTop+t;
+		eval(firstBit+currText+secondBit+styleRef+'.top=currTop+thirdBit');
+		scrollStatus=setTimeout('scrollTextUp(t)',10);
+	}
+}
+function pauseText(){
+	clearTimeout(scrollStatus);
+}
+
+function scrollTextUpAll(distance){
+	currTop=currTop+distance;
+	if (currTop>topStopPoint) currTop=topStopPoint;
+	eval(firstBit+currText+secondBit+styleRef+'.top=currTop+thirdBit');
+}
+function scrollTextDownAll(distance){
+	currTop=currTop-distance;
+	if (currTop<bottomStopPoint) currTop=bottomStopPoint;
+	eval(firstBit+currText+secondBit+styleRef+'.top=currTop+thirdBit');
+}
+
+function startPreviewOn(){
+	PreviewLeftStop=500;
+}
+function slidePreviewOn(){
+	if (PreviewLeft>PreviewLeftStop){
+		PreviewLeft-=5;
+		eval(firstBit+currPreview+secondBit+styleRef+'.left=PreviewLeft+thirdBit');
+		setTimeout('slidePreviewOn()',10);
+	}
+}
+function startPreviewOff(){
+	PreviewLeftStop=600;
+}
+function slidePreviewOff(){
+	if (PreviewLeft<PreviewLeftStop){
+		PreviewLeft+=5;
+		eval(firstBit+currPreview+secondBit+styleRef+'.left=PreviewLeft+thirdBit');
+		setTimeout('slidePreviewOff()',10);
+	}
+}
+
+function switchLogo(){
+	if (logoStatus<1){
+		slideSouth('logo',0,135,4);
+		slideNorth('shape',35,35,1);
+		slideWest('design',500,35,1);
+		slideEast('shape',495,35,1);
+		slideEast('web',495,35,1);
+		logoStatus++
+	}else{
+		slideNorth('logo',135,135,4);
+		slideSouth('shape',0,35,1);
+		slideEast('design',465,35,1);
+		slideWest('shape',530,35,1);
+		slideWest('web',530,35,1);
+		logoStatus-=1;
+	}
+}
+
+function brighten(){
+	if (colorStatus<99){
+		colorStatus+=11;
+		document.bgColor = "#00"+colorStatus+colorStatus;
+	}
+}
+function darken(){
+	if (colorStatus>0){
+		colorStatus-=11;
+		document.bgColor = "#00"+colorStatus+colorStatus;
+	}
+}
+function brightness(){
+	if (brightnessStatus<1){
+		showLayer('increase');
+		showLayer('decrease');
+		brightnessStatus++;
+	}else{
+		hideLayer('increase');
+		hideLayer('decrease');
+		brightnessStatus-=1;
+	}
+}
+
+window.onload=init;
+//-->
+</script>
+<link rel="Stylesheet" href="english_data/hamish.css" type="text/css" media="screen">
+</head><body alink="#996600" bgcolor="#001111" text="#cccc99" vlink="#999966" link="#ffffcc" marginwidth="0">
+
+<div style="visibility: hidden;" id="loading">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td align="center" bgcolor="#003333" valign="middle" width="640" height="440">
+<p>Welcome to <strong>ad@ctio.com</strong><br>
+Loading... please wait.</p>
+</td></tr>
+</tbody></table>
+</div>
+
+<div style="top: 75px; left: 80px; visibility: visible;" id="intro">
+<p>My name is <a href="javascript:;" onclick="window.open('../resume/','popup','status=yes,toolbar=no,scrollbars=yes,width=600,height=440');blurHeadoff();window.status=''; return false" onmouseover="blurHeadon();window.status='View my résumé'; return true" onmouseout="blurHeadoff();window.status=''; return true">Jeremy Keith</a>.
+I am a freelance web designer based in Brighton in southern England.</p>
+<p>I've been making web sites since 1998. I saw the need for a web
+design service specialising in small businesses and organisations. I
+can fulfil that need by providing web sites that are individually
+tailored to the requirements of every client. Instead of giving a
+pre-packaged one-size-fits-all web site, I rely on personal contact and
+involvement to give the best possible results at an inexpensive price.</p>
+</div>
+
+<div id="questions"><a href="javascript:;" onclick="callText('questionstext');return false" onmouseover="swap(questions,questionson); fourBlurbon('quesblurb');window.status='questions'; return true" onmouseout="swap(questions,questionsoff);fourBlurboff();window.status=''; return true"><img src="http://adactio.com/version1/graphics/questionson.gif" alt="questions" name="questions" border="0" width="100" height="25"></a></div>
+
+<div style="visibility: hidden;" id="quesblurb"><img src="english_data/quesblurb.gif" alt="what works on the web" border="0" width="100" height="100"></div>
+
+<div id="questionstext">
+<img src="english_data/questions.gif" alt="questions" border="0" width="100" height="25">
+<p><a href="javascript:;" onclick="callText('why');return false" onmouseover="window.status='why?'; return true" onmouseout="window.status=''; return true">Why do I need a web site?</a>
+Every company, every service, every organisation needs a web site.
+Here are the reasons why.</p>
+<p><a href="javascript:;" onclick="callText('good');return false" onmouseover="window.status='web sites that work'; return true" onmouseout="window.status=''; return true">What makes a web site work?</a>
+A well designed web site must fulfil a number of conditions.
+These are the most important points in making a web site work.</p>
+<p><a href="javascript:;" onclick="callText('bad');return false" onmouseover="window.status='bad web sites'; return true" onmouseout="window.status=''; return true">Why are there so many bad web sites?</a>
+The world wide web is full of badly designed web sites.
+There are many bad practices to be avoided when putting your presence on the web.</p>
+<p align="right"><a class="anakin" href="javascript:;" onclick="callText('questionstext');return false" onmouseover="window.status='top'; return true" onmouseout="window.status=''; return true">Back to the top</a></p>
+</div>
+
+<div id="why">
+<h2>Why do I need a web site?</h2>
+<p>Many people see the world wide web as a virtual shopping mall. Some
+see it as a giant community where people can find information and
+exchange ideas. Others view the world wide web as a medium for
+entertainment.</p>
+<p>The web is all these things and more.</p>
+<p>I firmly believe that everybody should have a web site. From the
+largest corporation to the most obscure hobbyist, there's room on the
+web for everybody.</p>
+<p>At its very simplest a web site can be a way of announcing "Here I
+am" with an accompanying telephone number or email address to promote
+further interaction.</p>
+<p>For small business and services, the world wide web offers an
+incredibly cost effective means of advertising. Compared to print,
+radio and television advertisements, a web site offers more information
+together with more possibilities for customer feedback.</p>
+<p>The world wide web removes many of the traditional constraints
+involved in running a business. Customers no longer have to make a trip
+to the store to find out what's in stock. Shops, bars, restaurants,
+cinemas and theatres can entice people to visit with a well designed
+web site.</p>
+<p>More and more businesses are realising the importance of a strong
+web presence. If your business isn't on the web, then it's going to
+lose out to the online competition.</p>
+<ul>
+<li><a href="javascript:;" onclick="callText('good');return false" onmouseover="window.status='web sites that work'; return true" onmouseout="window.status=''; return true">What makes a web site work?</a></li>
+<li><a href="javascript:;" onclick="callText('bad');return false" onmouseover="window.status='bad web sites'; return true" onmouseout="window.status=''; return true">Why are there so many bad web sites?</a></li>
+</ul>
+<p align="right"><a class="anakin" href="javascript:;" onclick="callText('why');return false" onmouseover="window.status='top'; return true" onmouseout="window.status=''; return true">Back to the top</a></p>
+</div>
+
+<div id="good">
+<h2>What makes a web site work?</h2>
+<p>Designing for the web would be a lot easier if there was a formula
+for making a good web site. Such a formula can never exist because
+different web sites have different needs.</p>
+<p>Every web site has a goal. Some web sites are there to entertain,
+some are sources of information, others are trying to sell a product.
+All these web sites must be designed differently.</p>
+<p>The first step in designing a site is to ask "<cite>What is the purpose of this web site</cite>". Once this question is answered and the site's goal is established, an audience can be targeted.</p>
+<p>A web site designed to advertise or sell the latest computer games
+can safely target a high tech audience. If someone is interested in a
+computer game that can only be run on a fast computer with the best
+graphics and sound cards, it can safely be assumed that they will have
+a recent web browser, with all the latest plug-ins installed, and
+probably a fast modem.</p>
+<p>Information based sites, on the other hand, should aim to reach as
+wide an audience as possible. A medical database, for example, should
+be accessible to everybody. This means that it should work on every web
+browser and shouldn't be too dependent on graphics, sound or other
+effects.</p>
+<p>Most web sites lie somewhere between these two extremes. This site,
+for example, strikes a compromise. I want to be able to impress
+prospective clients with my use of animated graphics, and javascript
+effects, while at the same time keeping the site accessible to a wide
+audience. The result is a web site which is still visible in older
+browsers, but far more impressive looking in the more recent versions.</p>
+<p>Once the goals and audience of a web site are established, the
+design of the site can be begin. Unfortunately, there are a lot of bad
+web designers out there, and, therefore, a lot of bad web sites.</p>
+<ul>
+<li><a href="javascript:;" onclick="callText('why');return false" onmouseover="window.status='why?'; return true" onmouseout="window.status=''; return true">Why do I need a web site?</a></li><li><a href="javascript:;" onclick="callText('bad');return false" onmouseover="window.status='bad web sites'; return true" onmouseout="window.status=''; return true">Why are there so many bad web sites?</a></li>
+</ul>
+<p align="right"><a class="anakin" href="javascript:;" onclick="callText('good');return false" onmouseover="window.status='top'; return true" onmouseout="window.status=''; return true">Back to the top</a></p>
+</div>
+
+<div id="bad">
+<h2>Why are there so many bad web sites?</h2>
+<p>The world wide web is full of badly designed web sites. If a web
+site isn't pleasant to view and navigate, then the visitor will leave.
+If this happens, the site has failed in its aims.</p>
+<p>The problem is that while HTML is relatively easy to learn, design
+is an art form that cannot be mastered so quickly. Colour theory,
+balance and layout are just some aspects of web design. Added to that
+are the practical necessities of keeping download time low and ensuring
+that the site is visible to a maximum number of people.</p>
+<p>Ignoring the subtleties of good web design, it's still amazing how many sites break the most basic aesthetic rules.</p>
+<ol>
+<li>Incorrect spelling. Nothing interrupts the flow of text quite like a misspelt word.</li>
+<li>Garishly clashing colours. You don't need to have an art degree to
+realise that bright red on bright green is not a pleasant combination.</li>
+<li>Blinking text and flashing graphics. These effects are not impressive; they're annoying.</li>
+<li>Haphazard navigation. I should be able to concentrate on the
+content of a web site and not constantly be thinking about how to
+navigate around it.</li>
+<li>Minuscule text. This is hard to read.</li>
+<li>Giant text. This is equally hard to read.</li>
+<li>Huge graphics. These will increase download time and encourage visitors to leave before the graphics are finished downloading.</li>
+<li>Broken links. Nothing is more unprofessional than a link that leads nowhere.</li>
+<li>Screenfuls of uninterrupted text. The web is not print. It's harder
+to read lots of text on a screen than on paper. Text needs to be laid
+out and broken down into bite sized sections.</li>
+<li>Uninteresting and unoriginal content. The most basic and also the worst design flaw.</li>
+</ol>
+<ul>
+<li><a href="javascript:;" onclick="callText('why');return false" onmouseover="window.status='why?'; return true" onmouseout="window.status=''; return true">Why do I need a web site?</a></li>
+<li><a href="javascript:;" onclick="callText('good');return false" onmouseover="window.status='web sites that work'; return true" onmouseout="window.status=''; return true">What makes a web site work?</a></li>
+</ul>
+<p align="right"><a class="anakin" href="javascript:;" onclick="callText('bad');return false" onmouseover="window.status='top'; return true" onmouseout="window.status=''; return true">Back to the top</a></p>
+</div>
+
+<div id="method"><a href="javascript:;" onclick="callText('methodtext');return false" onmouseover="swap(method,methodon);threeBlurbon('methblurb');window.status='method'; return true" onmouseout="swap(method,methodoff);threeBlurboff();window.status='';return true"><img src="english_data/method.gif" alt="method" name="method" border="0" width="100" height="25"></a></div>
+
+<div style="visibility: hidden;" id="methblurb"><img src="english_data/methblurb.gif" alt="getting the work done" border="0" width="100" height="100"></div>
+
+<div id="methodtext">
+<img src="english_data/method.gif" alt="method" border="0" width="100" height="25">
+<p>Every project goes through a process which can be roughly divided into three steps.</p>
+<p><a href="javascript:;" onclick="callText('consultation');return false" onmouseover="window.status='consultation'; return true" onmouseout="window.status=''; return true">Consultation with the client.</a>
+This is the first stage of every web site. The site's goals are established, ideas are exchanged and a contract is drawn up.</p>
+<p><a href="javascript:;" onclick="callText('creation');return false" onmouseover="window.status='creation';return true" onmouseout="window.status=''; return true">Creating the web site.</a>
+The basic structure of the web site is created. Once the colour scheme
+and the overall look and feel of the site is established, the actual
+coding takes place.</p>
+<p><a href="javascript:;" onclick="callText('changes');return false" onmouseover="window.status='changes'; return true" onmouseout="window.status=''; return true">Making changes to the web site.</a>
+This is the final stage of the project. Final payment is made for the
+site design. Maintenance, where applicable, is then payable on an
+hourly basis.</p>
+<p align="right"><a class="anakin" href="javascript:;" onclick="callText('methodtext');return false" onmouseover="window.status='top'; return true" onmouseout="window.status=''; return true">Back to the top</a></p>
+</div>
+
+<div id="consultation">
+<h2>Consultation with the client</h2>
+<p>Every project begins with a meeting with the prospective client. The
+first step is to establish the aim of the web site. Some people have a
+very clear idea about what they want from a web site, while others have
+a more vague notion of the benefits a good web site has to offer.</p>
+<p>At the beginning of the project, close consultation with the client
+is necessary to establish what form the web site should take. Ideas for
+the overall site structure are presented to the client for approval.
+The next step is to agree upon a look for the web site.</p>
+<p>Various ideas for colour schemes and graphic designs are submitted
+to the client. Some ideas will be discarded while others emerge, as the
+design of the site comes to life. The client's input is vital at this
+stage, even if it is just to approve the proposed designs.</p>
+<p>The client must also provide any relevant documentation and images
+at the start of the project. These will form the basis for the content
+of the web site.</p>
+<ul>
+<li><a href="javascript:;" onclick="callText('creation');return false" onmouseover="window.status='creation'; return true" onmouseout="window.status=''; return true">Creating the web site.</a></li>
+<li><a href="javascript:;" onclick="callText('changes');return false" onmouseover="window.status='changes'; return true" onmouseout="window.status=''; return true">Making changes to the web site.</a></li>
+</ul>
+<p align="right"><a class="anakin" href="javascript:;" onclick="callText('consultation');return false" onmouseover="window.status='top'; return true" onmouseout="window.status=''; return true">Back to the top</a></p>
+</div>
+
+<div id="creation">
+<h2>Creating the web site</h2>
+<p>The overall look and feel of the web site must be established before
+any coding can take place. This involves the combination of a colour
+scheme, graphic design and typography. These choices are often
+influenced by designs in other media. A music group, for instance,
+could have a web site which reflects the look and feel of the band's
+album covers and posters. This preserves continuity, and enables the
+association of a certain image with a specific product or service.</p>
+<p>In other situations, the web site design must be created from
+scratch. In this case, a background in art and design is invaluable.
+Having studied at the Crawford College of Art and Design, I have not
+only the necessary design skills, but also the experience in turning
+designs into reality.</p>
+<p>The HTML which forms the bulk of the web site is written by hand in
+a straightforward text editor. This enables complete control over the
+code. Web sites written in visual HTML editors often have unnecessarily
+bloated code and are difficult to edit.</p>
+<p>At the same time as the HTML is written, the site's graphics are
+created. The client must provide the initial images, usually in the
+form of photographs and drawings. These are then scanned, adjusted to
+fit the design of the site and converted into a format suitable for the
+web (.gif or .jpeg). Other images, such as navigational icons, can be
+created from scratch.</p>
+<p>In this way, the web site comes to life.</p>
+<ul>
+<li><a href="javascript:;" onclick="callText('consultation');return false" onmouseover="window.status='consultation'; return true" onmouseout="window.status=''; return true">Consultation with the client.</a></li>
+<li><a href="javascript:;" onclick="callText('changes',1000);return false" onmouseover="window.status='changes'; return true" onmouseout="window.status=''; return true">Making changes to the web site.</a></li>
+</ul>
+<p align="right"><a class="anakin" href="javascript:;" onclick="callText('creation');return false" onmouseover="window.status='top'; return true" onmouseout="window.status=''; return true">Back to the top</a></p>
+</div>
+
+<div id="changes">
+<h2>Making changes to the web site</h2>
+<p>Before the web site can be considered complete, the site must be
+tested on a number of different platforms in as many different browsers
+as possible. When the web site has undergone all these tests, it is
+presented to the client for final approval.</p>
+<p>Now, the web site is online. A good web site, however, is always
+changing and updating its content. Some sites require very little
+updating, perhaps once a month, while others need to constantly change.</p>
+<p>A good design ensures that people will visit your site; regular maintenance will ensure that they come back.</p>
+<ul>
+<li><a href="javascript:;" onclick="callText('consultation');return false" onmouseover="window.status='consultation'; return true" onmouseout="window.status=''; return true">Consultation with the client.</a></li>
+<li><a href="javascript:;" onclick="callText('creation');return false" onmouseover="window.status='creation'; return true" onmouseout="window.status=''; return true">Creating the web site.</a></li>
+</ul>
+<p align="right"><a class="anakin" href="javascript:;" onclick="callText('changes');return false" onmouseover="window.status='top'; return true" onmouseout="window.status=''; return true">Back to the top</a></p>
+</div>
+
+<div id="portfolio"><a href="javascript:;" onclick="callText('portfoliotext');return false" onmouseover="swap(portfolio,portfolioon);fourBlurbon('portblurb');window.status='portfolio'; return true" onmouseout="swap(portfolio,portfoliooff);fourBlurboff();window.status=''; return true"><img src="english_data/portfolio.gif" alt="portfolio" name="portfolio" border="0" width="100" height="25"></a></div>
+
+<div style="visibility: hidden;" id="portblurb"><img src="english_data/portblurb.gif" alt="web sites to view" border="0" width="100" height="100"></div>
+
+
+<div id="portfoliotext">
+<img src="english_data/portfolio.gif" alt="portfolio" border="0" width="100" height="25">
+<h4><a href="javascript:;" onclick="window.open('../casestudy/','popup','status=yes,toolbar=no,scrollbars=yes,width=675,height=450');startPreviewOff();slidePreviewOff();window.status=''; return false" onmouseover="changePreview('lit');startPreviewOn();slidePreviewOn();window.status='view a case study'; return true" onmouseout="startPreviewOff();slidePreviewOff();window.status=''; return true">Case study</a></h4>
+<p>This case study is an in-depth look at the development of a
+successful web site. The evolution of the site design is shown from
+start to finish.</p>
+<h4><a href="javascript:;" onclick="callText('designportfolio');window.status='';return false" onmouseover="changePreview('lunarride');startPreviewOn();slidePreviewOn();window.status='design portfolio'; return true" onmouseout="startPreviewOff();slidePreviewOff();window.status=''; return true">Web design portfolio</a></h4>
+<p>These are web sites I have designed, developed and produced. All of
+them fulfil the requirements of a well made site: quick to download,
+easy to navigate and pleasing to the eye</p>
+<h4><a href="javascript:;" onclick="callText('devportfolio');window.status='';return false" onmouseover="changePreview('vitra');startPreviewOn();slidePreviewOn();window.status='development portfolio'; return true" onmouseout="startPreviewOff();slidePreviewOff();window.status=''; return true">Web development portfolio</a></h4>
+<p>I have done development and production work (but not design) on these sites.</p>
+<p align="right"><a class="anakin" href="javascript:;" onclick="callText('portfoliotext');return false" onmouseover="window.status='top'; return true" onmouseout="window.status=''; return true">Back to the top</a></p>
+</div>
+
+<div id="designportfolio">
+<h2>Web design</h2>
+
+<p><a href="http://www.mapplanet.com/" target="entrypage" onclick="window.open('http://www.mapplanet.com/about/tour','tour','status=yes,toolbar=no,scrollbars=no,width=640,height=480'); return true;" onmouseover="changePreview('guidedtour');startPreviewOn();slidePreviewOn();window.status='www.mapplanet.com/about/tour'; return true" onmouseout="startPreviewOff();slidePreviewOff();window.status=''; return true">MapPlanet Guided Tour</a>
+<a href="http://www.mapplanet.com/about/tour" onclick="window.open('http://www.mapplanet.com/about/tour','tour','status=yes,toolbar=no,scrollbars=no,width=640,height=480'); return false;" target="_entrypage" onmouseover="changePreview('guidedtour');startPreviewOn();slidePreviewOn();window.status='www.mapplanet.com/about/tour'; return true" onmouseout="startPreviewOff();slidePreviewOff();window.status=''; return true"><img src="english_data/win02.gif" alt="view in a new window" border="0" width="20" height="20"></a></p>
+<p>The guided tour section of the MapPlanet web site is designed to be
+clear, concise and easy to navigate. The design uses existing elements
+from the web site while introducing new ideas.</p>
+
+<p><a href="http://www.wordridden.com/index.shtml" target="entrypage" onmouseover="changePreview('wordridden');startPreviewOn();slidePreviewOn();window.status='www.wordridden.com'; return true" onmouseout="startPreviewOff();slidePreviewOff();window.status=''; return true">WordRidden</a>
+<a href="http://www.wordridden.com/index.shtml" target="_blank" onmouseover="changePreview('wordridden');startPreviewOn();slidePreviewOn();window.status='www.wordridden.com'; return true" onmouseout="startPreviewOff();slidePreviewOff();window.status=''; return true"><img src="english_data/win02.gif" alt="view in a new window" border="0" width="20" height="20"></a></p>
+<p>This is an award-winning "me-zine". The spacious design provides the
+perfect platform for the site's content. The site is split up into five
+sections interlinked with an icon-based navigation system.</p>
+
+<p><a href="http://lostintranslation.com/" target="entrypage" onmouseover="changePreview('lit');startPreviewOn();slidePreviewOn();window.status='www.lostintranslation.com'; return true" onmouseout="startPreviewOff();slidePreviewOff();window.status=''; return true">Lost in Translation</a>
+<a href="http://lostintranslation.com/" target="_blank" onmouseover="changePreview('lit');startPreviewOn();slidePreviewOn();window.status='www.lostintranslation.com'; return true" onmouseout="startPreviewOff();slidePreviewOff();window.status=''; return true"><img src="english_data/win02.gif" alt="view in a new window" border="0" width="20" height="20"></a></p>
+<p>See the <a href="javascript:;" onclick="window.open('casestudy','popup','status=yes,toolbar=no,scrollbars=yes,width=675,height=450');return false" onmouseover="window.status='view a case study'; return true" onmouseout="window.status=''; return true">case study</a> for a detailed look at this site.</p>
+
+<p><a href="http://www.lunar-ride.de/" target="entrypage" onmouseover="changePreview('lunarride');startPreviewOn();slidePreviewOn();window.status='www.lunar-ride.de'; return true" onmouseout="startPreviewOff();slidePreviewOff();window.status=''; return true">Lunar Ride</a>
+<a href="http://www.lunar-ride.de/" target="_blank" onmouseover="changePreview('lunarride');startPreviewOn();slidePreviewOn();window.status='www.lunar-ride.de'; return true" onmouseout="startPreviewOff();slidePreviewOff();window.status=''; return true"><img src="english_data/win02.gif" alt="view in a new window" border="0" width="20" height="20"></a></p>
+<p>This is the official web site of the German rock band Lunar Ride.
+The site showcases the band's image. Visitors have the option of
+listening to the band's songs while exploring the web site. It is in
+German only.</p>
+
+<p><a href="http://www.ibttechnik.de/" target="entrypage" onmouseover="changePreview('ibt');startPreviewOn();slidePreviewOn();window.status='www.IBTtechnik.de'; return true" onmouseout="startPreviewOff();slidePreviewOff();window.status=''; return true">Ingold &amp; Burgert Technik</a>
+<a href="http://www.ibttechnik.de/" target="_blank" onmouseover="changePreview('ibt');startPreviewOn();slidePreviewOn();window.status='www.IBTtechnik.de'; return true" onmouseout="startPreviewOff();slidePreviewOff();window.status=''; return true"><img src="english_data/win02.gif" alt="view in a new window" border="0" width="20" height="20"></a></p>
+<p>This German firm, a supplier of building materials and tools, now
+has a strong web presence. The site combines a bold use of colour with
+a clean page layout and clear navigation. This site is in German only.</p>
+
+<p><a href="http://www.iz3w.org/fernweh/deutsch/index.html" target="entrypage" onmouseover="changePreview('fernweh'); startPreviewOn(); slidePreviewOn();window.status='www.iz3w.org/fernweh'; return true" onmouseout="startPreviewOff();slidePreviewOff();window.status='';return true">FernWeh</a>
+<a href="http://www.iz3w.org/fernweh/deutsch/index.html" target="_blank" onmouseover="changePreview('fernweh'); startPreviewOn(); slidePreviewOn();window.status='www.iz3w.org/fernweh'; return true" onmouseout="startPreviewOff();slidePreviewOff();window.status='';return true"><img src="english_data/win02.gif" alt="view in a new window" border="0" width="20" height="20"></a></p>
+<p>The FernWeh web site is run by the "Third World Information Centre"
+(iz3w), a non-profit organisation. I wrote Perl CGI scripts to enable
+remote updates, site-wide searches and a discussion forum. This site
+has been designed to expand with time. This site is in German only.</p> 
+
+<p><a href="http://alhambra-orchestra.com/" target="entrypage" onmouseover="changePreview('salonorchester');startPreviewOn();slidePreviewOn();window.status='www.alhambra-orchestra.com'; return true" onmouseout="startPreviewOff();slidePreviewOff();window.status=''; return true">Salonorchester Alhambra</a>
+<a href="http://alhambra-orchestra.com/" target="_blank" onmouseover="changePreview('salonorchester');startPreviewOn();slidePreviewOn();window.status='www.alhambra-orchestra.com'; return true" onmouseout="startPreviewOff();slidePreviewOff();window.status=''; return true"><img src="english_data/win02.gif" alt="view in a new window" border="0" width="20" height="20"></a></p>
+<p>The official web site of the band from Vienna. Smart looking and
+humourous, the site is designed to reflect the character of a 90's band
+playing 20's music. Some elements of the site have since been altered
+by the site owners.</p>
+
+<p><a href="http://adactio.com/session/index.shtml" target="entrypage" onmouseover="changePreview('session');startPreviewOn();slidePreviewOn();window.status='The Session'; return true" onmouseout="startPreviewOff();slidePreviewOff();window.status=''; return true">The Session</a>
+<a href="http://adactio.com/session/index.shtml" target="_blank" onmouseover="changePreview('session');startPreviewOn();slidePreviewOn();window.status='The Session'; return true" onmouseout="startPreviewOff();slidePreviewOff();window.status=''; return true"><img src="english_data/win02.gif" alt="view in a new window" border="0" width="20" height="20"></a></p>
+<p>This is a pet project of mine. The Session is a resource for players
+of traditional Irish music. The site is updated weekly, encouraging
+repeated visits. The site has an old-fashioned feel to it which matches
+the music.</p>
+
+<p><a href="http://adactio.com/beam/index.shtml" target="entrypage" onmouseover="changePreview('beam');startPreviewOn();slidePreviewOn();window.status='BEAM'; return true" onmouseout="startPreviewOff();slidePreviewOff();window.status=''; return true">The BEAM Homepage</a>
+<a href="http://adactio.com/beam/index.shtml" target="_blank" onmouseover="changePreview('beam');startPreviewOn();slidePreviewOn();window.status='BEAM'; return true" onmouseout="startPreviewOff();slidePreviewOff();window.status=''; return true"><img src="english_data/win02.gif" alt="view in a new window" border="0" width="20" height="20"></a></p>
+<p>A web site for the Freiburg based band BEAM. The site has a
+tasteful, elegant look. The content is organised in such a way as to
+provide quick and easy access to information in the form of text,
+pictures and sound.</p>
+
+<ul>
+<li><a href="javascript:;" onclick="window.open('../casestudy','popup','status=yes,toolbar=no,scrollbars=yes,width=675,height=450');startPreviewOff();slidePreviewOff();window.status=''; return false" onmouseover="window.status='view a case study'; return true" onmouseout="window.status=''; return true">Case study</a></li>
+<li><a href="javascript:;" onclick="callText('devportfolio'); return false" onmouseover="window.status='development portfolio'; return true" onmouseout="window.status=''; return true">Web development portfolio</a></li>
+</ul>
+<p align="right"><a class="anakin" href="javascript:;" onclick="callText('designportfolio');return false" onmouseover="window.status='top'; return true" onmouseout="window.status=''; return true">Back to the top</a></p>
+</div>
+
+<div id="devportfolio">
+<h2>Web development</h2>
+<p><a href="http://www.virtual-identity.com/" target="entrypage" onmouseover="changePreview('vi');startPreviewOn();slidePreviewOn();window.status='www.virtual-identity.com'; return true" onmouseout="startPreviewOff();slidePreviewOff();window.status=''; return true">Virtual Identity</a>
+<a href="http://www.virtual-identity.com/" target="_blank" onmouseover="changePreview('vi');startPreviewOn();slidePreviewOn();window.status='www.virtual-identity.com'; return true" onmouseout="startPreviewOff();slidePreviewOff();window.status=''; return true"><img src="english_data/win02.gif" alt="view in a new window" border="0" width="20" height="20"></a></p>
+<p>Virtual Identity is a German new media firm. I carried out HTML, ASP
+and DHTML work on the company's corporate web site. I also contributed
+to many in-house projects.</p>
+
+<p><a href="http://www.vitra.com/" target="entrypage" onmouseover="changePreview('vitra');startPreviewOn();slidePreviewOn();window.status='www.vitra.com'; return true" onmouseout="startPreviewOff();slidePreviewOff();window.status=''; return true">Vitra</a>
+<a href="http://www.vitra.com/" target="_blank" onmouseover="changePreview('vitra');startPreviewOn();slidePreviewOn();window.status='www.vitra.com'; return true" onmouseout="startPreviewOff();slidePreviewOff();window.status=''; return true"><img src="english_data/win02.gif" alt="view in a new window" border="0" width="20" height="20"></a></p>
+<p>Working in co-operation with Virtual Identity, I was responsible for
+the front-end development of this ambitious web site. I wrote all the
+javascript for the site's DHTML interface as well as much of the HTML
+and ASP.</p>
+
+<p><a href="http://www.siemens.com/interimreport3/" target="entrypage" onmouseover="changePreview('siemens');startPreviewOn();slidePreviewOn();window.status='www.siemens.com/interimreport3'; return true" onmouseout="startPreviewOff();slidePreviewOff();window.status=''; return true">Siemens Interim Report</a>
+<a href="http://www.siemens.com/interimreport3/" target="_blank" onmouseover="changePreview('siemens');startPreviewOn();slidePreviewOn();window.status='www.siemens.com/interimreport3'; return true" onmouseout="startPreviewOff();slidePreviewOff();window.status=''; return true"><img src="english_data/win02.gif" alt="view in a new window" border="0" width="20" height="20"></a></p>
+<p>This was another Virtual Identity project. Working from .pdf and
+photoshop files, and working under a tight deadline, I created the
+online version of this financial report using HTML, DHTML and Perl.</p>
+
+<p><a href="http://www.iz3w.org/iz3w/index.htm" target="entrypage" onmouseover="changePreview('iz3w');startPreviewOn();slidePreviewOn();window.status='www.iz3w.org/iz3w'; return true" onmouseout="startPreviewOff();slidePreviewOff();window.status=''; return true">IZ3W</a>
+<a href="http://www.iz3w.org/iz3w/index.htm" target="_blank" onmouseover="changePreview('iz3w');startPreviewOn();slidePreviewOn();window.status='www.iz3w.org/iz3w'; return true" onmouseout="startPreviewOff();slidePreviewOff();window.status=''; return true"><img src="english_data/win02.gif" alt="view in a new window" border="0" width="20" height="20"></a></p>
+<p>The "Informationszentrum 3. Welt" (Third World Information Centre)
+releases a magazine every six weeks. I developed a javascript-based
+shopping cart for their existing web site. Following implementation of
+this solution, magazine orders increased threefold.</p>
+
+<ul>
+<li><a href="javascript:;" onclick="window.open('../casestudy/','popup','status=yes,toolbar=no,scrollbars=yes,width=675,height=450');startPreviewOff();slidePreviewOff();window.status=''; return false" onmouseover="window.status='view a case study'; return true" onmouseout="window.status=''; return true">Case study</a></li>
+<li><a href="javascript:;" onclick="callText('designportfolio');return false" onmouseover="window.status='design portfolio'; return true" onmouseout="window.status=''; return true">Web design portfolio</a></li>
+</ul>
+<p align="right"><a class="anakin" href="javascript:;" onclick="callText('devportfolio');return false" onmouseover="window.status='top'; return true" onmouseout="window.status=''; return true">Back to the top</a></p>
+</div>
+
+<div id="siemens"><img src="english_data/siemens.gif" alt="" width="100" height="94"></div>
+<div id="vitra"><img src="english_data/vitra.gif" alt="" width="100" height="94"></div>
+<div id="vi"><img src="english_data/vi.gif" alt="" width="100" height="94"></div>
+<div id="ibt"><img src="english_data/ibt.gif" alt="" width="100" height="94"></div>
+<div id="iz3w"><img src="english_data/iz3w.gif" alt="" width="100" height="94"></div>
+<div id="beam"><img src="english_data/beam.gif" alt="" width="100" height="94"></div>
+<div id="session"><img src="english_data/session.gif" alt="" width="100" height="94"></div>
+<div id="salonorchester"><img src="english_data/salonorchester.gif" alt="" width="100" height="94"></div>
+<div id="lunarride"><img src="english_data/lunarride.gif" alt="" width="100" height="94"></div>
+<div id="fernweh"><img src="english_data/fernweh.gif" alt="" width="100" height="94"></div>
+<div id="wordridden"><img src="english_data/wordridden.gif" alt="" width="100" height="94"></div>
+<div id="lit"><img src="english_data/lit.gif" alt="" width="100" height="94"></div>
+<div id="guidedtour"><img src="english_data/guidedtour.gif" alt="" width="100" height="94"></div>
+
+<div id="contact"><a href="javascript:;" onclick="callText('contacttext');return false" onmouseover="swap(contact,contacton);threeBlurbon('contblurb');window.status='contact'; return true" onmouseout="swap(contact,contactoff);threeBlurboff();window.status='';return true"><img src="english_data/contact.gif" alt="contact" name="contact" border="0" width="100" height="25"></a></div>
+
+<div style="visibility: hidden;" id="contblurb"><img src="english_data/contblurb.gif" alt="get in touch" border="0" width="100" height="100"></div>
+
+<div id="contacttext">
+<img src="english_data/contact.gif" alt="contact" border="0" width="100" height="25">
+<p>The quickest and easiest way to get in touch with me is by email. Simply <a href="javascript:;" onclick="window.open('form.shtml','form','status=no,toolbar=no,scrollbars=no,width=400,height=400'); return false" onmouseover="blurHeadon();window.status='write to me'; return true" onmouseout="blurHeadoff();window.status=''; return true">fill out this form</a> or write an email to:</p>
+<p><a href="mailto:jeremy@adactio.com" onmouseover="blurHeadon();window.status='write to me'; return true" onmouseout="blurHeadoff();window.status=''; return true">jeremy@adactio.com</a></p>
+
+<p>Or you can put pen to paper and write to me at the following address:</p>
+<p>Jeremy Keith<br>
+5 Upper Market Street<br>
+Hove BN3 1AS<br>
+England</p>
+<p>You can telephone or fax me at:<br>
++44 (1273) 771 485</p>
+<p>Whichever method of communication you choose, rest assured that I look forward to hearing from you.</p>
+<p align="right"><a class="anakin" href="javascript:;" onclick="callText('contacttext');return false" onmouseover="window.status='top'; return true" onmouseout="window.status=''; return true">Back to the top</a></p>
+</div>
+
+<div id="pricing"><a href="javascript:;" onclick="callText('pricingtext');return false" onmouseover="swap(pricing,pricingon);fourBlurbon('priceblurb');window.status='pricing'; return true" onmouseout="swap(pricing,pricingoff);fourBlurboff();window.status='';return true"><img src="english_data/pricing.gif" alt="pricing" name="pricing" border="0" width="100" height="25"></a></div>
+
+<div style="visibility: hidden;" id="priceblurb"><img src="english_data/priceblurb.gif" alt="the best for less" border="0" width="100" height="100"></div>
+
+<div id="pricingtext">
+<img src="english_data/pricing.gif" alt="pricing" border="0" width="100" height="25">
+<p>Rather than offering ready made package deals, I approach each
+project as a separate piece of work. Therefore, my prices vary
+depending on the complexity of the web site.</p>
+<p>There are two pricing models available to the client:</p>
+<ul>
+<li><a href="javascript:;" onclick="callText('pricinghourly');return false" onmouseover="window.status='hourly rate'; return true" onmouseout=";window.status=''; return true">Hourly rate</a></li>
+<li><a href="javascript:;" onclick="callText('pricingfixed');return false" onmouseover="window.status='fixed fee'; return true" onmouseout=";window.status=''; return true">Fixed fee</a></li>
+</ul>
+</div>
+
+<div id="pricinghourly">
+<h2>Hourly rate</h2>
+<p>This option is useful if the client isn't completely sure of the scope of the web site.</p>
+<p>Regular invoices are sent to the client for all work involved in the
+creation of the web site, from initial design through to development
+and, where applicable, maintenance.</p>
+<p>The advantage of this method is that the size and complexity of the
+web site can be easily changed. The disadvantage is that there is no
+way of knowing at the beginning of the project how much the web site
+will cost.</p>
+<ul>
+<li><a href="javascript:;" onclick="callText('pricingfixed');return false" onmouseover="window.status='fixed fee'; return true" onmouseout=";window.status=''; return true">Fixed fee</a></li>
+</ul>
+<p align="right"><a class="anakin" href="javascript:;" onclick="callText('pricinghourly');return false" onmouseover="window.status='top'; return true" onmouseout="window.status=''; return true">Back to the top</a></p>
+</div>
+
+<div id="pricingfixed">
+<h2>Fixed fee</h2>
+<p>This is option is useful if the scope of the web site is clear.</p>
+<p>At the start of the project, a contract is drawn up with the client
+fixing the price of the web site. This figure is reached following
+discussion of the site's planned size and complexity. Half of the fee
+is payable up front, and half upon completion of the web site.</p>
+<p>The advantage of this method is that the web site can be budgeted
+precisely. The disadvantage is that changes to the site's size,
+complexity and scope cannot be made without drawing up a new contract
+and altering the budget.</p>
+<ul>
+<li><a href="javascript:;" onclick="callText('pricinghourly');return false" onmouseover="window.status='hourly rate'; return true" onmouseout=";window.status=''; return true">Hourly rate</a></li>
+</ul>
+<p align="right"><a class="anakin" href="javascript:;" onclick="callText('pricingfixed');return false" onmouseover="window.status='top'; return true" onmouseout="window.status=''; return true">Back to the top</a></p>
+</div>
+
+<div id="foreground1"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td bgcolor="#996600" width="660" height="50">&nbsp;</td></tr></tbody></table></div>
+<div id="foreground2"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td bgcolor="#996600" width="50" height="300">&nbsp;</td></tr></tbody></table></div>
+<div id="foreground3"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td bgcolor="#996600" width="50" height="300">&nbsp;</td></tr></tbody></table></div>
+<div id="foreground4"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td bgcolor="#996600" width="100" height="125">&nbsp;</td></tr></tbody></table></div>
+<div id="foreground5"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td bgcolor="#996600" width="60" height="300">&nbsp;</td></tr></tbody></table></div>
+<div id="foreground6"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td bgcolor="#996600" width="100" height="25">&nbsp;</td></tr></tbody></table></div>
+<div id="foreground7"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td bgcolor="#996600" width="660" height="20">&nbsp;</td></tr></tbody></table></div>
+<div id="foreground8"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td bgcolor="#996600" width="45" height="50">&nbsp;</td></tr></tbody></table></div>
+<div id="foreground9"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td bgcolor="#996600" width="45" height="50">&nbsp;</td></tr></tbody></table></div>
+<div id="foreground10"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td bgcolor="#996600" width="660" height="20">&nbsp;</td></tr></tbody></table></div>
+<div id="foreground11"><img src="english_data/topleft.gif" alt="" width="50" height="50"></div>
+<div id="foreground12"><img src="english_data/topright.gif" alt="" width="50" height="50"></div>
+<div id="foreground13"><img src="english_data/bottomleft.gif" alt="" width="50" height="50"></div>
+<div id="foreground14"><img src="english_data/bottomright.gif" alt="" width="50" height="50"></div>
+<div id="foreground15"><table border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td align="left" bgcolor="#003333" valign="top" width="275" height="25"><img src="english_data/topleft.gif" alt="" width="25" height="25"></td><td align="right" bgcolor="#003333" valign="top" width="275" height="25"><img src="english_data/topright.gif" alt="" width="25" height="25"></td></tr>
+<tr><td align="left" bgcolor="#003333" valign="bottom" width="275" height="25"><img src="english_data/bottomleft.gif" alt="" width="25" height="25"></td><td align="right" bgcolor="#003333" valign="bottom" width="275" height="25"><img src="english_data/bottomright.gif" alt="" width="25" height="25"></td></tr>
+</tbody></table></div>
+<div id="foreground16"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td bgcolor="#003333" width="100" height="150">&nbsp;</td></tr></tbody></table></div>
+<div id="foreground17"><img src="english_data/topleft.gif" alt="" width="25" height="25"></div>
+<div id="foreground18"><img src="english_data/topright.gif" alt="" width="25" height="25"></div>
+<div id="foreground19"><img src="english_data/bottomleft.gif" alt="" width="25" height="25"></div>
+<div id="foreground20"><img src="english_data/bottomright.gif" alt="" width="25" height="25"></div>
+
+<div style="visibility: visible;" id="blank">&nbsp;</div>
+
+<div style="visibility: hidden;" id="bluracross1"><img src="english_data/bluracross1.gif" alt="" width="100" height="100"></div>
+<div style="visibility: hidden;" id="bluracross2"><img src="english_data/bluracross2.gif" alt="" width="100" height="100"></div>
+<div style="visibility: hidden;" id="bluracross3"><img src="english_data/bluracross3.gif" alt="" width="100" height="100"></div>
+<div style="visibility: hidden;" id="bluracross4"><img src="english_data/bluracross4.gif" alt="" width="100" height="100"></div>
+
+<div style="left: 496px;" id="logo"><a href="javascript:;" onclick="callText('intro');switchLogo(); return false" onmouseover="window.status='ad@ctio'; return true" onmouseout="window.status=''; return true"><img src="english_data/logo01.gif" alt="ad@ctio" border="0" width="100" height="25"></a></div>
+
+<div id="headblur1"><img src="english_data/head02.gif" alt="" width="100" height="100"></div>
+<div id="headblur2"><img src="english_data/head03.gif" alt="" width="100" height="100"></div>
+<div id="head"><img src="english_data/head.gif" alt="" width="100" height="100"></div>
+
+<div style="visibility: hidden;" id="upfast"><a href="javascript:;" onclick="pauseText();return false" onmouseover="window.status=''; return true" onmousedown="scrollTextUp(10)" onmouseup="pauseText();" onmouseout="pauseText();"><img src="english_data/upfast.gif" alt="" border="0" width="25" height="25"></a></div>
+
+<div style="visibility: hidden;" id="up"><a href="javascript:;" onclick="pauseText();return false" onmouseover="window.status=''; return true" onmousedown="scrollTextUp(2)" onmouseup="pauseText();" onmouseout="pauseText();"><img src="english_data/up.gif" alt="" border="0" width="25" height="25"></a></div>
+
+<div style="visibility: hidden;" id="down"><a href="javascript:;" onclick="pauseText();return false" onmouseover="window.status='';return true" onmousedown="scrollTextDown(2)" onmouseup="pauseText();" onmouseout="pauseText();"><img src="english_data/down.gif" alt="" border="0" width="25" height="25"></a></div>
+
+<div style="visibility: hidden;" id="downfast"><a href="javascript:;" onclick="pauseText();return false" onmouseover="window.status='';return true" onmousedown="scrollTextDown(10)" onmouseup="pauseText();" onmouseout="pauseText();"><img src="english_data/downfast.gif" alt="" border="0" width="25" height="25"></a></div>
+
+<div style="visibility: hidden;" id="upscroll"><a href="javascript:;" onclick="scrollTextUpAll(250);return false" onmouseover="scrollTextUp(1);window.status=''; return true" onmouseout="pauseText();"><img src="english_data/up.gif" alt="" border="0" width="25" height="25"></a></div>
+
+<div style="visibility: hidden;" id="downscroll"><a href="javascript:;" onclick="scrollTextDownAll(250);return false" onmouseover="scrollTextDown(1);window.status=''; return true" onmouseout="pauseText();"><img src="english_data/down.gif" alt="" border="0" width="25" height="25"></a></div>
+
+<div style="top: 34px; left: 496px;" id="shape"><img src="english_data/shape.gif" alt="web design" border="0" width="100" height="135"></div>
+<div style="top: 33px;" id="web"><img src="english_data/web.gif" alt="web" border="0" width="26" height="65"></div>
+<div style="left: 497px;" id="design"><img src="english_data/design.gif" alt="design" border="0" width="90" height="30"></div>
+
+<div style="visibility: visible;" id="decrease"><a href="javascript:;" onclick="darken();return false" onmouseover="window.status='reduce brightness'; return true" onmouseout="window.status=''; return true"><img src="english_data/decrease.gif" alt="-" border="0" width="8" height="15"></a></div>
+
+<div style="visibility: visible;" id="increase"><a href="javascript:;" onclick="brighten();return false" onmouseover="window.status='increase brightness'; return true" onmouseout="window.status=''; return true"><img src="english_data/increase.gif" alt="+" border="0" width="8" height="15"></a></div>
+
+<div id="button"><a href="javascript:;" onclick="brightness();return false" onmouseover="changeBlurb('brightnessblurb');window.status='adjust brightness'; return true" onmouseout="changeBlurb('blank');window.status=''; return true"><img src="english_data/button.gif" alt="brightness" border="0" width="15" height="15"></a></div>
+
+<div style="visibility: hidden;" id="brightnessblurb"><p>adjust brightness</p></div>
+
+</body></html>
