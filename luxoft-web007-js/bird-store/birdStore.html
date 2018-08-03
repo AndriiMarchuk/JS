@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bird Store</title>
+    <script type="text/javascript" src="birdStore.js">
+        getStoreBirds();
+        var newBird = {type: "Chicken", count: 12, price: 7};
+        addNewBird(newBird);
+        addExistingBird("Duck", 5);
+        getBirdsLessThan(20);
+        sellBird("Eagle", 10, "Jack");
+        sellBird("Eagle", 3, "Jack");
+        getSoldBird("Eagle");
+        changeBirdPrice("Chicken", 8);
+        sellBird("Chicken", 5, "Olga");
+        getAlltransactions();
+        getStoreBirds();
+        getClientTransactions("Olga");
+        getClientTransactions("Victor");
+    </script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+
+<table id="birdsTable" class="table table-hover">
+    <th>Bird</th>
+    <th>Price</th>
+    <th>Count</th>
+</table>
+<div>
+    <button type="submit" class="btn btn-primary" onclick="getStoreBirds()">Load Birds</button>
+</div>
+<div>
+    <div class="form-group">
+        <label for="newBirdType">Bird Type</label>
+        <input type="text" class="form-control" id="newBirdType" placeholder="Bird Type">
+    </div>
+    <div class="form-group">
+        <label for="newBirdPrice">Bird Price</label>
+        <input type="text" class="form-control" id="newBirdPrice" placeholder="Bird Price">
+    </div>
+    <div class="form-group">
+        <label for="newBirdCount">Bird Count</label>
+        <input type="text" class="form-control" id="newBirdCount" placeholder="Bird Price">
+    </div>
+
+    <button type="submit" class="btn btn-primary" onclick="addInputBird()">Add Bird</button>
+</div>
+</body>
+</html>

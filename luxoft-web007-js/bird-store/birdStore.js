@@ -1,4 +1,3 @@
-(function () {
 
     function Store(owner, address) {
         this.owner = owner;
@@ -53,34 +52,41 @@
             if (birdName === bird.type) {
                 var newBirdCount = bird.count - birdCountSold;
                 if (newBirdCount<0) {
-                    console.log("Error. Can\'t sell " + birdCountSold + " " + bird.type + ". They are left only " + bird.count + " pieces\n");
+                    document.write("Error. Can\'t sell " + birdCountSold + " " + bird.type + ". They are left only " + bird.count + " pieces<br>");
                     return;
                 }
                 bird.count = newBirdCount;
                 store.addTransaction(bird.type, bird.price, birdCountSold, clientName);
-                console.log("Sold " + birdCountSold + " " + birdName + " to " + clientName + "\n");
+                document.write("Sold " + birdCountSold + " " + birdName + " to " + clientName + "<br>");
             }
         }
     }
 
     function addNewBird(newBird){
         if(newBird.type === undefined || newBird.price === undefined){
-            console.log("Error. Can\'t have undefined type or price for a bird.\n");
+            document.write("Error. Can\'t have undefined type or price for a bird.<br>");
             return;
         }
         if(newBird.count === undefined){
             newBird.count = 0;
         }
         store.addBird(newBird.type, newBird.price, newBird.count);
-        console.log("Added new Bird:" + JSON.stringify(newBird) + " to a store\n");
+        document.write("Added new Bird:" + JSON.stringify(newBird) + " to a store<br>");
     }
+
+    function addInputBird(){
+        store.addBird(document.getElementById("newBirdType").value, document.getElementById("newBirdPrice").value, document.getElementById("newBirdCount").value);
+        getStoreBirds();
+    }
+
+
 
     function addExistingBird(birdName, birdCount){
         for (var i in store.birds) {
             var bird = store.birds[i];
             if (birdName === bird.type) {
                 bird.count += birdCount;
-                console.log("Added " + birdCount + " " + birdName + ". Current count: " + bird.count + "\n");
+                document.write("Added " + birdCount + " " + birdName + ". Current count: " + bird.count + "<br>");
             }
         }
     }
@@ -90,7 +96,7 @@
             var bird = store.birds[i];
             if (birdName === bird.type) {
                 bird.price = birdNewPrice;
-                console.log("Changed " + bird.type + " price to " + birdNewPrice + "\n");
+                document.write("Changed " + bird.type + " price to " + birdNewPrice + "<br>");
             }
         }
     }
@@ -100,21 +106,23 @@
         var transactionOutput = "Transactions: ";
         for (var i in store.transactions) {
             var transaction = store.transactions[i];
-            transactionOutput += "\n  bird: " + transaction.birdType + ", price: " + transaction.birdPrice + ", count: " + transaction.birdCount
+            transactionOutput += "<br>  bird: " + transaction.birdType + ", price: " + transaction.birdPrice + ", count: " + transaction.birdCount
                 + ", total: " + transaction.getTotal() + ", client: " + transaction.clientName;
             totalSoldPrice += transaction.getTotal();
         }
-        transactionOutput += "\nTotal profit: " + totalSoldPrice + "\n";
-        console.log(transactionOutput);
+        transactionOutput += "<br>Total profit: " + totalSoldPrice + "<br>";
+        document.write(transactionOutput);
     }
 
     function getStoreBirds(){
-        var storeState = "Store: \n";
+        var storeState = "Store: <br>";
+        document.getElementById("birdsTable").innerHTML="<th>Bird</th><th>Price</th><th>Count</th>";
         for (var i in store.birds) {
             var bird = store.birds[i];
-            storeState += "  " + bird.type + "=> price: " + bird.price + ", left: "+ bird.count + "\n";
+            storeState += "  " + bird.type + "=> price: " + bird.price + ", left: "+ bird.count + "<br>";
+            document.getElementById("birdsTable").innerHTML += "<tr><td>"+bird.type+"</td>"+"<td>"+bird.price+"</td>"+"<td>"+bird.count+"</td></tr>";
         }
-        console.log(storeState);
+        // document.write(storeState);
     }
 
     function getSoldBird(birdName){
@@ -127,24 +135,24 @@
                 birdSoldProfit += transaction.getTotal();
             }
         }
-        console.log("Sold " + birdName + " count: " + birdSoldCount + ", profit: " + birdSoldProfit + "\n");
+        document.write("Sold " + birdName + " count: " + birdSoldCount + ", profit: " + birdSoldProfit + "<br>");
     }
 
     function getClientTransactions(clientName) {
-        var clientTransactions = clientName + " transactions: \n";
+        var clientTransactions = clientName + " transactions: <br>";
         var transactionsCount = 0;
         for (var i in store.transactions) {
             var transaction = store.transactions[i];
             if (clientName === transaction.clientName) {
                 transactionsCount++;
                 clientTransactions += "  bird: " + transaction.birdType + ", price: " + transaction.birdPrice + ", count: " + transaction.birdCount
-                    + ", total: " + transaction.getTotal() + "\n";
+                    + ", total: " + transaction.getTotal() + "<br>";
             }
         }
         if (transactionsCount === 0) {
-            console.log("Sorry, but " + clientName + " has no transactions");
+            document.write("Sorry, but " + clientName + " has no transactions");
         } else {
-            console.log(clientTransactions);
+            document.write(clientTransactions);
         }
     }
 
@@ -152,9 +160,9 @@
         var fewOutput = "Birds less then "+fewCount+" pieces:";
         for (var i in store.birds) {
             var bird = store.birds[i];
-            fewOutput += "\n  " + bird.type + ":" + bird.count;
+            fewOutput += "<br>  " + bird.type + ":" + bird.count;
         }
-        console.log(fewOutput + "\n");
+        document.write(fewOutput + "<br>");
     }
 
     function loadStore(initialShop) {
@@ -193,5 +201,3 @@
     getStoreBirds();
     getClientTransactions("Olga");
     getClientTransactions("Victor");
-
-})();

@@ -9,7 +9,7 @@ function checkCookie()
 username=getCookie('username');
 if (username!=null && username!="")
   {
-  alert('Welcome again '+username+'!');
+  alert('Welcome again '+username+'! Expires: '+getCookie('expires'));
   }
 else 
   alert('Cookie username was not set');  
